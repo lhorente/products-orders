@@ -14,3 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+$this->get('products', 'ProductsController@index');
+$this->get('products/create', 'ProductsController@create');
+$this->get('products/edit/{id}', 'ProductsController@edit');
+$this->get('products/remove/{id}', 'ProductsController@remove');
+
+$this->post('products', 'ProductsController@save');
