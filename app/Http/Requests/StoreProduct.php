@@ -13,6 +13,7 @@ class StoreProduct extends FormRequest
      */
     public function authorize()
     {
+		$teste = $this->route();
         return true;
     }
 
