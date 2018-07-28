@@ -22,7 +22,7 @@ class ProductsController extends Controller{
     function save(StoreProduct $request){
 		$request->validated();
 
-		$product = null;;
+		$product = null;
 		
 		$id = filter_input(INPUT_POST,'id');
 		if ($id){

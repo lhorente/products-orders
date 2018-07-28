@@ -21,3 +21,8 @@ $this->get('products/edit/{id}', 'ProductsController@edit');
 $this->get('products/remove/{id}', 'ProductsController@remove');
 
 $this->post('products', 'ProductsController@save');
+
+$this->get('orders', 'OrdersController@index');
+$this->get('orders/create', 'OrdersController@create');
+$this->post('orders', 'OrdersController@save');
+$this->get('orders/remove/{id}', 'OrdersController@remove');

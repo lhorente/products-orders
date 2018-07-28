@@ -47,6 +47,7 @@
         <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
           <ul class="nav navbar-nav">
             <li><a href="{{ url('/products') }}">Produtos</a></li>
+            <li><a href="{{ url('/orders') }}">Pedidos</a></li>
           </ul>
         </div>
         <!-- /.navbar-collapse -->

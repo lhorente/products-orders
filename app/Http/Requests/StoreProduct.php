@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Http\Request;
 
 class StoreProduct extends FormRequest
 {
@@ -22,13 +23,21 @@ class StoreProduct extends FormRequest
      *
      * @return array
      */
-    public function rules(){
-        return [
-			'sku' => 'required|unique:products|max:255',
+    public function rules(Request $request){
+		$product_id = $request->input('id');
+		if ($product_id){
+			$validation_sku = 'required|max:255|unique:products,id,'.$product_id;
+		} else {
+			$validation_sku = 'required|max:255|unique:products';	
+		}
+		
+		$validation = [
+			'sku' => $validation_sku,
 			'name' => 'required|max:255',
 			'description' => 'required',
 			'price' => 'required',
 		];
+		return $validation;
     }
 	
 	public function messages(){
